@@ -3,19 +3,11 @@ import { ThemeContext } from "../App";
 import CardSection from "./common/CardSection";
 import DarkModeSwitch from "./common/DarkModeSwitch";
 
-const TopSection = ({ setIsWhite, topData }) => {
-  const isWhite = useContext(ThemeContext);
-  {
-    console.log(isWhite);
-  }
+const TopSection = ({ topData }) => {
+  const isWhite = useContext(ThemeContext)[0];
   return (
-    <section className="xl:mx-30 relative mx-[5rem] xl:pt-7">
-      <div
-        className={`bg ${
-          isWhite ? "bg-[hsl(225, 100%, 98%)]" : "bg-[hsl(231,39%,13%)]"
-        } absolute  left-0 top-0 h-[300px]`}
-      ></div>
-      <section className="top xl:grid-cols- flex flex-col xl:grid xl:grid-cols-10">
+    <section className="xl:mx-30 mx-[2rem] xl:pt-7">
+      <section className="top xl:grid-cols- flex flex-col px-5 xl:grid xl:grid-cols-10">
         <div
           className={`top-content border-b-2 pb-2 xl:col-span-9 xl:border-0 ${
             isWhite ? "border-[hsl(228,34%,66%)]" : "border-[hsl(228,28%,20%)]"
@@ -45,7 +37,7 @@ const TopSection = ({ setIsWhite, topData }) => {
           >
             Dark Mode
           </h1>
-          <DarkModeSwitch setIsWhite={setIsWhite} />
+          <DarkModeSwitch />
         </section>
       </section>
       <section className="card-section flex flex-col items-center xl:grid xl:grid-cols-4">

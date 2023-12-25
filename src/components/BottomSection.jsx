@@ -2,7 +2,7 @@ import OverviewCard from "./common/OverviewCard";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 const BottomSection = ({ overviewData }) => {
-  const isWhite = useContext(ThemeContext);
+  const isWhite = useContext(ThemeContext)[0];
   return (
     <section className=" flex flex-col">
       <h1

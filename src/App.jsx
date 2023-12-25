@@ -8,16 +8,22 @@ import { useState, createContext } from "react";
 export const ThemeContext = createContext();
 function App() {
   const [isWhite, setIsWhite] = useState(false);
-  console.log(isWhite);
   return (
-    <ThemeContext.Provider value={isWhite}>
+    <ThemeContext.Provider value={[isWhite, setIsWhite]}>
       <section
-        className={`main-background font-inter h-full xl:h-screen ${
+        className={`main-background relative z-50 h-full font-inter xl:h-screen ${
           isWhite ? "bg-[hsl(0,0%,100%)]" : "bg-[hsl(230,17%,14%)]"
         }`}
       >
-        <TopSection topData={topData} setIsWhite={setIsWhite} />
-        <BottomSection overviewData={overviewData} />
+        <div
+          className={`bg absolute -z-20 ${
+            isWhite ? "bg-[hsl(225,100%,98%)]" : "bg-[hsl(231,39%,13%)]"
+          } absolute z-50 h-[250px] w-full rounded-b-2xl`}
+        ></div>
+        <div className="render-section z-50">
+          <TopSection topData={topData} />
+          <BottomSection overviewData={overviewData} />
+        </div>
       </section>
     </ThemeContext.Provider>
   );

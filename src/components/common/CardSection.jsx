@@ -3,14 +3,16 @@ import { ThemeContext } from "../../App";
 const CardSection = ({
   item: { icon, name, followers, todayFollowers, todayStatus, borderTop },
 }) => {
-  const isWhite = useContext(ThemeContext);
+  const isWhite = useContext(ThemeContext)[0];
   return (
     <section
-      className={`card-section m-5  w-80 items-center justify-center  rounded-2xl   ${
+      className={`card-section relative m-5  w-80 items-center justify-center  rounded-2xl   ${
         isWhite ? "bg-[hsl(227,47%,96%)]" : "bg-[hsl(228,28%,20%)]"
       }`}
     >
-      <div className={`h-3 w-full rounded-t-2xl ${borderTop}`}></div>
+      <div
+        className={`absolute top-0 h-3 w-full rounded-t-2xl ${borderTop}`}
+      ></div>
       <div
         className={`content flex h-full flex-col items-center  justify-center gap-3 py-5`}
       >

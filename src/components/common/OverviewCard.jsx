@@ -3,7 +3,7 @@ import { ThemeContext } from "../../App";
 const OverviewCard = ({
   item: { title, icon, view, percentage, todayStatus },
 }) => {
-  const isWhite = useContext(ThemeContext);
+  const isWhite = useContext(ThemeContext)[0];
   return (
     <section className="my-4 flex w-full flex-col items-center justify-center">
       <div
