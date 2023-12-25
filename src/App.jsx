@@ -18,7 +18,7 @@ function App() {
         <div
           className={`bg absolute -z-20 ${
             isWhite ? "bg-[hsl(225,100%,98%)]" : "bg-[hsl(231,39%,13%)]"
-          } absolute z-50 h-[250px] w-full rounded-b-2xl`}
+          } absolute -z-50 h-[250px] w-full rounded-b-2xl`}
         ></div>
         <div className="render-section z-50">
           <TopSection topData={topData} />
